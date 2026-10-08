@@ -1,0 +1,1296 @@
+<!-- 
+  =======================================================
+  Website: FixTech Mobile & Computer Repair Services
+  Location: Lucena City, CALABARZON
+  Developer: Geron T. Marmol (Mammoth)
+  =======================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixTech | Expert Electronics & Computer Repair in Lucena & CALABARZON</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables for Dark Theme (Default) */
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --primary-blue: #0284c7;
+            --accent-cyan: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --hero-bg: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+            --nav-bg: rgba(15, 23, 42, 0.95);
+            --review-bg: #0b1329;
+            --radius: 12px;
+        }
+
+        /* Light Theme Overrides */
+        [data-theme="light"] {
+            --bg-dark: #f8fafc;
+            --bg-card: #ffffff;
+            --primary-blue: #0284c7;
+            --accent-cyan: #0284c7;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --hero-bg: radial-gradient(circle at center, #f1f5f9 0%, #e2e8f0 100%);
+            --nav-bg: rgba(255, 255, 255, 0.95);
+            --review-bg: #f1f5f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--accent-cyan);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue), #0369a1);
+            color: #fff;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-blue);
+            color: var(--text-main);
+        }
+
+        .btn-lg {
+            padding: 14px 28px;
+            font-size: 1.05rem;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo-fix { color: var(--text-main); }
+        .logo-tech { color: var(--accent-cyan); }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle-btn {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--accent-cyan);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 150px 0 80px;
+            background: var(--hero-bg);
+            text-align: center;
+        }
+
+        .badge {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent-cyan);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: var(--accent-cyan);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            padding: 30px 20px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .icon-box {
+            font-size: 2rem;
+            color: var(--accent-cyan);
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Showcase Section */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: var(--bg-card);
+            color: var(--text-muted);
+            padding: 8px 18px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .filter-btn.active {
+            background-color: var(--primary-blue);
+            color: #fff;
+            border-color: var(--primary-blue);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .portfolio-card {
+            background-color: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio-card.hide {
+            display: none;
+        }
+
+        .tech-img-box {
+            background: var(--hero-bg);
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .tech-img-box i {
+            font-size: 2.8rem;
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+        }
+
+        .tech-img-box span {
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--bg-card);
+            color: var(--accent-cyan);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+        }
+
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .card-body h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .card-body ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .card-body ul li {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-body ul li i {
+            color: var(--accent-cyan);
+            font-size: 0.8rem;
+        }
+
+        /* Estimate Form Styling */
+        .estimate-section {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .estimate-card {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: var(--bg-dark);
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-cyan);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--review-bg);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .testimonial-card {
+            background-color: var(--bg-card);
+            padding: 25px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .stars {
+            color: #f59e0b;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-main);
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .client-info h4 {
+            color: var(--accent-cyan);
+            font-size: 1rem;
+        }
+
+        .client-info span {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* FAQ Accordion Styling */
+        .faq-section {
+            background-color: var(--bg-dark);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-header {
+            width: 100%;
+            padding: 20px;
+            background: none;
+            border: none;
+            outline: none;
+            color: var(--text-main);
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-header:hover {
+            background-color: rgba(56, 189, 248, 0.05);
+        }
+
+        .faq-header i {
+            color: var(--accent-cyan);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-header.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 20px;
+            background-color: var(--bg-dark);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            border-top: 1px solid transparent;
+        }
+
+        .faq-body.open {
+            padding: 15px 20px 20px;
+            border-top-color: var(--border-color);
+        }
+
+        /* Location & Map Section */
+        .info-section {
+            background-color: var(--bg-card);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .info-box-card {
+            background-color: var(--bg-dark);
+            padding: 25px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .info-box-card h3 {
+            color: var(--accent-cyan);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .info-list i {
+            color: var(--accent-cyan);
+            margin-top: 4px;
+        }
+
+        /* Map Container Styling */
+        .map-container {
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-dark);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 350px;
+            border: 0;
+        }
+
+        .map-footer-banner {
+            padding: 15px 20px;
+            background-color: var(--bg-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .map-footer-banner p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .map-footer-banner i {
+            color: var(--accent-cyan);
+        }
+
+        .contact-cta {
+            text-align: center;
+            margin-top: 40px;
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            padding: 25px;
+            border-radius: var(--radius);
+            color: #ffffff;
+        }
+
+        .contact-cta h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 25px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .dev-credit-link {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.2s ease;
+        }
+
+        .dev-credit-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 1.9rem; }
+            .hero-actions { flex-direction: column; }
+            .btn-lg { width: 100%; justify-content: center; }
+            .map-footer-banner { flex-direction: column; align-items: stretch; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-fix">FIX</span><span class="logo-tech">TECH</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#showcase">Repairs</a></li>
+                    <li><a href="#estimate">Get Estimate</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#location">Shop Location</a></li>
+                </ul>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i> <span id="themeText">Dark</span>
+                </button>
+                <a href="tel:09709419998" class="btn btn-primary nav-btn"><i class="fa-solid fa-phone"></i> Call / Text</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <span class="badge"><i class="fa-solid fa-shop"></i> Shop Walk-Ins & Home Service Available</span>
+            <h1>FixTech Mobile & Computer <br><span class="highlight">Repair Services</span></h1>
+            <p>Expert diagnostic and chip-level repairs for Laptops, Desktops, Cellphones, Gaming Consoles, Smart TVs, and Printers. Located near SM Lucena!</p>
+            <div class="hero-actions">
+                <a href="tel:09709419998" class="btn btn-primary btn-lg"><i class="fa-solid fa-headset"></i> Call 09709419998</a>
+                <a href="#estimate" class="btn btn-outline btn-lg"><i class="fa-solid fa-calculator"></i> Get Free Price Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Comprehensive Services</h2>
+                <p>From minor maintenance to complex motherboard soldering.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon-box"><i class="fa-solid fa-laptop"></i></div>
+                    <h3>Laptop & Desktop</h3>
+                    <p>Motherboard repairs, HDD to SSD upgrade, OS reformatting, full deep cleaning, and re-thermal pasting.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fa-solid fa-gamepad"></i></div>
+                    <h3>Gaming Consoles</h3>
+                    <p>PS5, PS4, Legion, and Switch repair. Drive mechanics, flex ribbons, thermal pad replacements, and chip fixes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <h3>Cellphone & Displays</h3>
+                    <p>Board-level backlight coil replacement, green/yellow/white screen fixes, screen replacements for all brands.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fa-solid fa-tv"></i></div>
+                    <h3>Smart / LED TV & GPU</h3>
+                    <p>No power troubleshooting, display line fixes, video card (GPU) micro-soldering, and board repair.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Successful Repair Showcase -->
+    <section id="showcase" class="showcase section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Recent Successful Repairs</h2>
+                <p>Clean, verified repair updates from our workshop bench.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterSelection('all', event)">All Repairs</button>
+                <button class="filter-btn" onclick="filterSelection('laptop', event)">Laptops</button>
+                <button class="filter-btn" onclick="filterSelection('mobile', event)">Cellphones</button>
+                <button class="filter-btn" onclick="filterSelection('console', event)">Consoles</button>
+                <button class="filter-btn" onclick="filterSelection('electronics', event)">Electronics</button>
+            </div>
+
+            <!-- Showcase Grid -->
+            <div class="portfolio-grid">
+                
+                <!-- Repair Card 1 -->
+                <div class="portfolio-card console">
+                    <div class="tech-img-box">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>PS5 CONSOLE</span>
+                        <span class="card-badge">Motherboard Fix</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>No Power / Beep Only Resolved</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> <strong>Issue:</strong> Console won't power on (Beep sound only)</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Diagnostics:</strong> Shorted WiFi/Bluetooth Module IC on motherboard</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Fix:</strong> Replaced WiFi/Bluetooth Module IC chip</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Status:</strong> 100% Revived & Tested</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Repair Card 2 -->
+                <div class="portfolio-card laptop">
+                    <div class="tech-img-box">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <span>HP LAPTOP</span>
+                        <span class="card-badge">Motherboard Fix</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>No Power / Dead Board Revived</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> <strong>Issue:</strong> Laptop completely dead, no power</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Diagnostics:</strong> Component leakage on 19V power rail line</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Fix:</strong> Micro-soldering component replacement</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Status:</strong> 100% Revived & Tested</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Repair Card 3 -->
+                <div class="portfolio-card console">
+                    <div class="tech-img-box">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>PS4 FAT 1200 SERIES</span>
+                        <span class="card-badge">Overheating</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Overheating & Fan Repair</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> <strong>Issue:</strong> High temperature, fan not turning, dust buildup</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Action:</strong> Replaced internal cooling fan & deep cleaned heatsink</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Fix:</strong> Re-applied high-performance thermal paste</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Status:</strong> Running cool & quiet</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Repair Card 4 -->
+                <div class="portfolio-card console">
+                    <div class="tech-img-box">
+                        <i class="fa-solid fa-headset"></i>
+                        <span>LENOVO LEGION GO</span>
+                        <span class="card-badge">Handheld PC</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Thermal Maintenance & Clean</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> <strong>Device:</strong> Legion Go Handheld Gaming PC</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Action:</strong> Full interior deep cleaning & fan deknotting</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Fix:</strong> Premium thermal cooling paste repaste</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Status:</strong> Optimized thermal performance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Repair Card 5 -->
+                <div class="portfolio-card laptop">
+                    <div class="tech-img-box">
+                        <i class="fa-solid fa-laptop"></i>
+                        <span>ACER CORE I5</span>
+                        <span class="card-badge">Display Issue</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Auto-Off Display Resolved</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> <strong>Issue:</strong> Screen turning off unexpectedly</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Action:</strong> Full deep cleaning & dust extraction</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Fix:</strong> Re-thermal paste processor</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Status:</strong> Fully functional</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Repair Card 6 -->
+                <div class="portfolio-card mobile">
+                    <div class="tech-img-box">
+                        <i class="fa-solid fa-mobile-retro"></i>
+                        <span>REALME C65</span>
+                        <span class="card-badge">Board Repair</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>No Backlight / Black Screen Fix</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> <strong>Issue:</strong> Vibrate only, no display</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Fix:</strong> Replaced blown Backlight Coil on board</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Status:</strong> Display restored</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- We Buy Broken Phones Banner -->
+            <div class="we-buy-banner" style="margin-top: 40px; background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px solid #38bdf8; border-radius: 12px; padding: 25px; text-align: center; color: #ffffff;">
+                <h3 style="color: #38bdf8; font-size: 1.4rem; margin-bottom: 10px;"><i class="fa-solid fa-sack-dollar"></i> WE BUY BROKEN PHONES & GADGETS!</h3>
+                <p style="color: #94a3b8; max-width: 700px; margin: 0 auto 15px;">Have an old or broken smartphone sitting in a drawer? Turn it into cash! We buy phones with broken screens, no power issues, or for spare parts.</p>
+                <a href="https://www.facebook.com/profile.php?id=61557234471757" target="_blank" class="btn btn-primary"><i class="fa-solid fa-comment-dollar"></i> Sell Your Broken Phone / PM Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Estimate & Consultation Form -->
+    <section id="estimate" class="estimate-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Request a Price Estimate / Consultation 🛠️</h2>
+                <p>Fill in your device details below for a quick quote and diagnosis!</p>
+            </div>
+
+            <div class="estimate-card">
+                <form id="quoteForm" onsubmit="sendEstimate(event)">
+                    <div class="form-group">
+                        <label for="deviceType"><i class="fa-solid fa-microchip"></i> Select Device Category</label>
+                        <select id="deviceType" class="form-control" required>
+                            <option value="">-- Choose Device Type --</option>
+                            <option value="Laptop / Desktop PC">Laptop / Desktop PC</option>
+                            <option value="Cellphone / Smartphone">Cellphone / Smartphone</option>
+                            <option value="Gaming Console (PS5/PS4/Switch)">Gaming Console (PS5 / PS4 / Switch)</option>
+                            <option value="Smart / LED TV">Smart / LED TV</option>
+                            <option value="Printer / Other Electronics">Printer / Other Electronics</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deviceModel"><i class="fa-solid fa-tag"></i> Brand & Exact Model</label>
+                        <input type="text" id="deviceModel" class="form-control" placeholder="e.g., HP Pavilion 15 / PS5 Slim / Realme C65" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="issueDescription"><i class="fa-solid fa-triangle-exclamation"></i> Describe the Issue / Problem</label>
+                        <textarea id="issueDescription" class="form-control" placeholder="e.g., No power, screen flickering, overheating, beep sound only..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceType"><i class="fa-solid fa-truck"></i> Preferred Service Option</label>
+                        <select id="serviceType" class="form-control" required>
+                            <option value="Shop Walk-In (Lucena Shop)">Shop Walk-In (Lucena City Shop)</option>
+                            <option value="Home Service Request">Home Service Visit (CALABARZON)</option>
+                            <option value="Courier Delivery (LBC / J&T / Lalamove)">Courier Delivery (LBC / J&T / Lalamove)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center; background: #1877f2;">
+                        <i class="fa-brands fa-facebook-messenger"></i> Request Estimate via FB Messenger
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Feedback & Reviews -->
+    <section id="reviews" class="testimonials section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Customer Feedback & Reviews 💬</h2>
+                <p>Eto ang sabi ng mga nakapagpagawa na sa FixTech!</p>
+            </div>
+
+            <!-- Leave a Review Form -->
+            <div class="add-review-card" style="background-color: var(--bg-card); padding: 25px; border-radius: var(--radius); border: 1px solid var(--border-color); margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                <h3 style="color: var(--accent-cyan); margin-bottom: 15px; font-size: 1.2rem; text-align: center;">
+                    <i class="fa-solid fa-pen-to-square"></i> Leave a Review / Mag-iwan ng Feedback
+                </h3>
+                <form id="reviewForm" onsubmit="addNewReview(event)">
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 15px;">
+                        <div style="flex: 1; min-width: 200px;">
+                            <label style="display: block; margin-bottom: 5px; font-size: 0.9rem; color: var(--text-muted);">Your Name / Alias</label>
+                            <input type="text" id="reviewerName" class="form-control" placeholder="e.g., Mark / Sir From Tayabas" required>
+                        </div>
+                        <div style="flex: 1; min-width: 200px;">
+                            <label style="display: block; margin-bottom: 5px; font-size: 0.9rem; color: var(--text-muted);">Device Repaired</label>
+                            <input type="text" id="repairedDevice" class="form-control" placeholder="e.g., PS5 Slim / Laptop LCD" required>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-size: 0.9rem; color: var(--text-muted);">Rating</label>
+                        <select id="reviewRating" class="form-control" required>
+                            <option value="5">⭐⭐⭐⭐⭐ (5/5 Stars)</option>
+                            <option value="4">⭐⭐⭐⭐ (4/5 Stars)</option>
+                            <option value="3">⭐⭐⭐ (3/5 Stars)</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 5px; font-size: 0.9rem; color: var(--text-muted);">Your Feedback / Review</label>
+                        <textarea id="reviewComment" class="form-control" placeholder="Kamusta ang repair service ni FixTech?..." required style="min-height: 80px;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <i class="fa-solid fa-paper-plane"></i> Submit Review
+                    </button>
+                </form>
+            </div>
+
+            <!-- Reviews Grid -->
+            <div class="testimonials-grid">
+                <!-- Review Card 1 -->
+                <div class="testimonial-card">
+                    <div>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Salamat po sa tiwala Sir! 💯 Akala ko bibili na ko ng bagong laptop kasi nag-a-auto off na habang nagtuturo. Clean + thermal paste lang pala, matino na ulit! God bless po! 🙏✨"</p>
+                    </div>
+                    <div class="client-info">
+                        <h4>Ma'am Teacher 👩‍🏫</h4>
+                        <span>Acer Laptop Repair • Lucena City</span>
+                    </div>
+                </div>
+
+                <!-- Review Card 2 -->
+                <div class="testimonial-card">
+                    <div>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Legit home service repair! 🎮 Ayaw na magbasa ng disc ng PS5 Slim ko pero nadali agad ni sir. Mabilis pa kausap sa FB messenger, highly recommended boss! 🔥👍"</p>
+                    </div>
+                    <div class="client-info">
+                        <h4>Sir From Sampaloc 🕹️</h4>
+                        <span>PS5 Slim Drive Fix • Sampaloc, Quezon</span>
+                    </div>
+                </div>
+
+                <!-- Review Card 3 -->
+                <div class="testimonial-card">
+                    <div>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Solb na solb! ⚡ Akala ko hopeless case na no power HP laptop ko matapos mag-short circuit. Naisave pa yung board at data, super affordable pa singil. Thanks FixTech! 🙌💯"</p>
+                    </div>
+                    <div class="client-info">
+                        <h4>Verified Client 💻</h4>
+                        <span>Motherboard Level Repair • CALABARZON</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive FAQ Accordion -->
+    <section id="faq" class="faq-section section-padding">
+        <div class="container faq-container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions 🤔</h2>
+                <p>Got questions before bringing in your device? We've got answers!</p>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-header" onclick="toggleFaq(this)">
+                    <span>Gaano katagal bago matapos ang repair?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-body">
+                    <p>Depende sa sira ng unit! Minor repairs (cleaning, thermal paste repasting, screen/battery replacement, upgrades) are completed within 1 to 3 hours. For motherboard-level micro-soldering and short circuit diagnostics, it usually takes 1 to 3 business days.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-header" onclick="toggleFaq(this)">
+                    <span>May warranty ba ang mga repair ninyo?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-body">
+                    <p>Yes, absolutely! We provide a repair warranty on all replaced parts and motherboard soldering repairs. Detailed warranty terms will be provided upon turnover of your device.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-header" onclick="toggleFaq(this)">
+                    <span>Paano gumagana ang Home Service Repair?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-body">
+                    <p>Just message us on Facebook or call <strong>09709419998</strong> to schedule a visit! Let us know your address and unit details, and our technician will bring the diagnostic tools directly to your home or office anywhere in CALABARZON.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-header" onclick="toggleFaq(this)">
+                    <span>Paano magpa-repair via Courier (LBC / Lalamove / J&T)?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-body">
+                    <p>If you live far from Lucena City, safely package your device and send it to our shop address near SM Lucena. Message us first so we can give you the recipient details and track your package arrival!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-header" onclick="toggleFaq(this)">
+                    <span>Paano kung hindi na kayang ayusin ang gadget ko?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-body">
+                    <p>No worries! If your device is beyond repair or not worth fixing, we also <strong>BUY BROKEN PHONES AND GADGETS</strong> for cash or spare parts!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Google Maps Section -->
+    <section id="location" class="info-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Visit Our Shop or Request Home Service</h2>
+                <p>We serve Lucena City, Quezon Province, and CALABARZON.</p>
+            </div>
+            
+            <div class="info-grid">
+                <!-- Shop Location Card -->
+                <div class="info-box-card">
+                    <h3><i class="fa-solid fa-location-dot"></i> Physical Shop Location</h3>
+                    <ul class="info-list">
+                        <li><i class="fa-solid fa-shop"></i> <strong>Address:</strong> Brgy. Ibabang Dupay, Purok Hapi Valley, Lucena City</li>
+                        <li><i class="fa-solid fa-map-pin"></i> <strong>Landmark:</strong> Near SM Lucena, beside Palawan Pawnshop, Ortiz Building (MG Clothing shop)</li>
+                        <li><i class="fa-solid fa-clock"></i> <strong>Inquiries:</strong> Call/Text anytime for drop-off details</li>
+                    </ul>
+                </div>
+
+                <!-- Service Options Card -->
+                <div class="info-box-card">
+                    <h3><i class="fa-solid fa-truck-fast"></i> Service Options</h3>
+                    <ul class="info-list">
+                        <li><i class="fa-solid fa-house-laptop"></i> <strong>Home Service:</strong> On-site technician visits for homes and offices across CALABARZON.</li>
+                        <li><i class="fa-solid fa-box"></i> <strong>Courier Repairs Accepted:</strong> Send your devices via LBC, Lalamove, or J&T Express!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Google Maps Embed Container -->
+            <div class="map-container">
+                <iframe 
+                    class="map-frame"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3865.626815302636!2d121.61907!3d13.9355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd4eb3c271e0cb%3A0x8898cbff7b5a8e0!2sSM%20City%20Lucena!5e0!3m2!1sen!2sph!4v1650000000000!5m2!1sen!2sph" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <div class="map-footer-banner">
+                    <p><i class="fa-solid fa-compass"></i> Located near SM Lucena, Brgy. Ibabang Dupay</p>
+                    <a href="https://www.bing.com/maps?q=SM+City+Lucena+Ibabang+Dupay+Lucena+City" target="_blank" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">
+                        <i class="fa-solid fa-map-location-dot"></i> Open Full Directions in Browser
+                    </a>
+                </div>
+            </div>
+
+            <!-- Call To Action -->
+            <div class="contact-cta">
+                <h3>Need Your Device Fixed Right Now?</h3>
+                <p>Visit our shop near SM Lucena, message us on Facebook, or call directly!</p>
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 15px;">
+                    <a href="https://www.facebook.com/profile.php?id=61557234471757" target="_blank" class="btn btn-outline" style="background-color: #1877f2; color: #fff; border: none;">
+                        <i class="fa-brands fa-facebook"></i> Message on Facebook
+                    </a>
+                    <a href="tel:09709419998" class="btn btn-outline" style="background-color: #fff; color: #0284c7; border: none;">
+                        <i class="fa-solid fa-phone"></i> Call 09709419998
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; FixTech Mobile and Computer Repair Service. All rights reserved.</p>
+            <p>Lucena City | CALABARZON | Hotline: 09709419998</p>
+            <p style="margin-top: 8px; font-size: 0.85rem;">
+                Website Designed & Developed by 
+                <a href="https://www.facebook.com/lHoly.Mammoth" target="_blank" rel="noopener noreferrer" class="dev-credit-link">
+                    Geron T. Marmol (Mammoth)
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Theme Toggle Engine
+        function applySavedTheme() {
+            const savedTheme = localStorage.getItem('fixtech_theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            const icon = document.getElementById('themeIcon');
+            const text = document.getElementById('themeText');
+
+            if (savedTheme === 'light') {
+                icon.className = 'fa-solid fa-sun';
+                text.innerText = 'Light';
+            } else {
+                icon.className = 'fa-solid fa-moon';
+                text.innerText = 'Dark';
+            }
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            localStorage.setItem('fixtech_theme', newTheme);
+            applySavedTheme();
+        }
+
+        // Initialize theme immediately on script execute
+        applySavedTheme();
+
+        // Showcase Filtering Script
+        function filterSelection(category, evt) {
+            const cards = document.getElementsByClassName("portfolio-card");
+            const buttons = document.getElementsByClassName("filter-btn");
+
+            for (let btn of buttons) {
+                btn.classList.remove("active");
+            }
+            if (evt) evt.target.classList.add("active");
+
+            for (let i = 0; i < cards.length; i++) {
+                if (category === "all") {
+                    cards[i].classList.remove("hide");
+                } else {
+                    if (cards[i].classList.contains(category)) {
+                        cards[i].classList.remove("hide");
+                    } else {
+                        cards[i].classList.add("hide");
+                    }
+                }
+            }
+        }
+
+        // Accordion FAQ Toggle Script
+        function toggleFaq(button) {
+            const body = button.nextElementSibling;
+            
+            button.classList.toggle("active");
+            
+            if (body.classList.contains("open")) {
+                body.classList.remove("open");
+                body.style.maxHeight = null;
+            } else {
+                body.classList.add("open");
+                body.style.maxHeight = body.scrollHeight + "px";
+            }
+        }
+
+        // Send Price Estimate via Messenger
+        function sendEstimate(event) {
+            event.preventDefault();
+            const targetUrl = `https://www.facebook.com/profile.php?id=61557234471757`;
+            window.open(targetUrl, '_blank');
+        }
+
+        // Automatically load saved reviews from localStorage on page load
+        document.addEventListener('DOMContentLoaded', loadSavedReviews);
+
+        // Add a customer review and save permanently in localStorage
+        function addNewReview(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('reviewerName').value;
+            const device = document.getElementById('repairedDevice').value;
+            const ratingNum = parseInt(document.getElementById('reviewRating').value);
+            const comment = document.getElementById('reviewComment').value;
+            const reviewId = 'review_' + Date.now();
+
+            const newReviewData = {
+                id: reviewId,
+                name: name,
+                device: device,
+                rating: ratingNum,
+                comment: comment
+            };
+
+            let savedReviews = JSON.parse(localStorage.getItem('fixtech_reviews')) || [];
+            savedReviews.unshift(newReviewData);
+            localStorage.setItem('fixtech_reviews', JSON.stringify(savedReviews));
+
+            renderReviewCard(newReviewData, true);
+
+            document.getElementById('reviewForm').reset();
+            alert('Salamat sa review! Your feedback is saved on this browser.');
+        }
+
+        // Build review card HTML and append/prepend to grid
+        function renderReviewCard(data, prepend = false) {
+            let starsHtml = '';
+            for (let i = 0; i < data.rating; i++) {
+                starsHtml += '<i class="fa-solid fa-star"></i>';
+            }
+
+            const newCard = document.createElement('div');
+            newCard.className = 'testimonial-card';
+            newCard.setAttribute('data-id', data.id);
+            newCard.innerHTML = `
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <div class="stars">${starsHtml}</div>
+                        <button onclick="removeReview('${data.id}')" style="background: none; border: none; color: #ef4444; cursor: pointer; font-size: 0.85rem;" title="Remove Review">
+                            <i class="fa-solid fa-trash"></i> Delete
+                        </button>
+                    </div>
+                    <p class="testimonial-text">"${data.comment}"</p>
+                </div>
+                <div class="client-info">
+                    <h4>${data.name} 🌟</h4>
+                    <span>${data.device} • Verified Feedback</span>
+                </div>
+            `;
+
+            const grid = document.querySelector('.testimonials-grid');
+            if (prepend) {
+                grid.insertBefore(newCard, grid.firstChild);
+            } else {
+                grid.appendChild(newCard);
+            }
+        }
+
+        // Load saved reviews from localStorage on page refresh
+        function loadSavedReviews() {
+            const savedReviews = JSON.parse(localStorage.getItem('fixtech_reviews')) || [];
+            savedReviews.forEach(review => {
+                renderReviewCard(review, false);
+            });
+        }
+
+        // Delete review permanently from browser storage
+        function removeReview(reviewId) {
+            const pin = prompt("Enter Admin PIN to remove this review:");
+            if (pin === "1234") { // Passcode set to 1234
+                let savedReviews = JSON.parse(localStorage.getItem('fixtech_reviews')) || [];
+                savedReviews = savedReviews.filter(r => r.id !== reviewId);
+                localStorage.setItem('fixtech_reviews', JSON.stringify(savedReviews));
+
+                const card = document.querySelector(`[data-id="${reviewId}"]`);
+                if (card) card.remove();
+
+                alert("Review permanently deleted!");
+            } else if (pin !== null) {
+                alert("Incorrect PIN!");
+            }
+        }
+    </script>
+</body>
+</html>
